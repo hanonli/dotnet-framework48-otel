@@ -34,6 +34,11 @@ namespace WebApplication1
             GlobalConfiguration.Configure(WebApiConfig.Register);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }
+
+        void Application_End()
+        {
+            _tracerProvider?.Dispose();
+        }
     }
 
     // public class WebApiApplication : HttpApplication
